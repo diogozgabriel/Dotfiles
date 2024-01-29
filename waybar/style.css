@@ -1,0 +1,246 @@
+* {
+    font-family: Symbols Nerd Font, Overpass Mono;
+    font-size: 14px;
+    min-height: 0;
+}
+
+@import "/home/diogo/.config/themes/catppuccin-macchiato.css";
+
+window#waybar.desktop {
+    background: alpha(@theme_base_color, 0.9);
+    /* border-bottom: 2px solid @unfocused_borders; */
+    color: @theme_text_color;
+    /* background-color: alpha(@mantle, 0.95); */
+    /* border: 1px solid #b45bcf; */
+    border-radius: 10px;
+    /* border: 2px solid rgba(100, 114, 125, 0.5); */
+    border: 2px solid shade(@lavender, 0.4);
+    /* color: @text; */
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+window#waybar.mobile {
+    background: alpha(@theme_base_color, 0.95);
+    /* border-bottom: 2px solid @unfocused_borders; */
+    color: @theme_text_color;
+    /* background-color: alpha(@mantle, 0.95); */
+    /* border: 1px solid #b45bcf; */
+    /* border-radius: 10px; */
+    /* border: 2px solid rgba(100, 114, 125, 0.5); */
+    border: 2px solid shade(@lavender, 0.4);
+    /* color: @text; */
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/*
+window#waybar.empty {
+    background-color: transparent;
+}
+window#waybar.solo {
+    background-color: #FFFFFF;
+}
+*/
+
+window#waybar.kitty {
+    /* background-color: @mantle; */
+}
+
+
+    /* #workspaces */
+    /* #workspaces button */
+    /* #workspaces button.active */
+    /* #workspaces button.empty */
+    /* #workspaces button.persistent */
+    /* #workspaces button.special */
+    /* #workspaces button.visible */
+
+
+#workspaces button {
+    /* padding: 3 0 0 0px; */
+    /* margin: 5 0 5 5px; */
+    background-color: transparent;
+    /* border-bottom: 3px solid transparent; */
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: inherit;
+    /* border-bottom: 1px solid #f8f8f2; */
+}
+
+#workspaces button.active {
+    background-color: @surface1;
+    /* border-bottom: 1px solid #44475A; */
+}
+
+#workspaces button.urgent {
+    background-color: @peach;
+}
+
+#submap {
+    background-color: @peach;
+     /* border-bottom: 1px solid #FF5555; */
+}
+
+#window,
+#clock,
+#custom-weather,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#bluetooth,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#gamemode,
+#mpd,
+#custom-updates,
+#custom-clipboard,
+#custom-scratchpad {
+    padding: 10 5 7 5px;
+    margin: 0 0px;
+}
+
+#custom-weather,
+#battery,
+#cpu,
+#bluetooth,
+#pulseaudio {
+    padding: 10 5 7 10px;
+    margin: 0 0 0 5px;
+    border-left: 1px solid @surface0;
+}
+
+#clock {
+    /* background-color: #64727D; */
+    /* min-width: 250px; */
+    padding: 10 10 7 10px;
+    margin: 0 0 0 5px;
+    border-left: 1px solid @surface0;
+}
+
+#custom-weather {
+}
+
+#battery {
+}
+
+#battery.charging {
+    /*background-color: #26A65B;*/
+    color: @green;
+}
+
+#battery.warning:not(.charging) {
+    /*background-color: #;*/
+    color: @peach;
+}
+
+@keyframes blink {
+    to {
+        background-color: @red;
+        color: @crust;
+    }
+}
+
+#battery.critical:not(.charging) {
+    /*background-color: #;*/
+    color: @red;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#cpu {
+    /*background-color: #2ecc71;*/
+    /*color: #000000;*/
+    border-left: 1px solid @surface0;
+}
+
+#memory {
+    /*background-color: #9b59b6;*/
+}
+
+#temperature {
+
+}
+
+#network {
+    /*background-color: #2980b9;*/
+}
+
+#network.disconnected {
+    /*background-color: #f53c3c;*/
+}
+
+#pulseaudio {
+    /* min-width: 110px; */
+    /* background-color: #f1c40f; */
+    /* color: #000000; */
+}
+
+#pulseaudio.muted {
+    /*background-color: #90b1b1;*/
+    /*color: #2a5c45;*/
+}
+
+#custom-media {
+    background-color: #66cc99;
+    color: #2a5c45;
+    min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+    background-color: #66cc99;
+}
+
+#custom-media.custom-vlc {
+    background-color: #ffa000;
+}
+
+#idle_inhibitor {
+    margin: 7 0 7 0px;
+    padding: 3 5 0 5px;
+}
+
+#idle_inhibitor.activated {
+    background-color: shade(@mantle, 1.5);
+}
+
+#mpd {
+    /*background-color: #282a36;*/
+    /*color: #2a5c45;*/
+}
+
+#mpd.disconnected {
+    /*background-color: #283a26;*/
+    /*color: #f8f8f2*/
+}
+
+#mpd.stopped {
+    /*background-color: #283a26;*/
+    /*color: #f8f8f2*/
+}
+
+#mpd.paused {
+    /*background-color: #283a26;*/
+}
+#custom-updates {
+    color: @peach;
+}
