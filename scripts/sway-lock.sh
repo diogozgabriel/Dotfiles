@@ -11,3 +11,4 @@ case "$1" in
 esac
 
 # physlock -L # reenable tty switching
+#teste
